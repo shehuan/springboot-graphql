@@ -1,0 +1,36 @@
+query user {
+  user(name: "xxxx", age: 100) {
+    id
+    name
+    age
+  }
+}
+
+query users {
+  users(input: {name: "xxxx", age: 10}) {
+    id
+    name
+    age
+  }
+}
+
+
+mutation addUser {
+  addUser(input: {name: "xxxx", age: 10}) {
+    code
+    msg
+  }
+}
+
+mutation addUser2($input: UserInput!) {
+  addUser(input: $input) {
+    code
+    msg
+  }
+}
+{
+  "input": {
+    "name": "xxxx",
+    "age": 10
+  }
+}

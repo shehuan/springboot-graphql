@@ -1,0 +1,24 @@
+server:
+  port: 8848 # http://localhost:8848/graphiql
+
+graphql:
+  servlet:
+    enabled: true
+    mapping: /graphql
+    exception-handlers-enabled: true
+    context-setting: PER_REQUEST_WITH_INSTRUMENTATION
+  tools:
+    schema-location-pattern: /graphql/schema.graphqls
+
+graphiql:
+  mapping: /graphiql
+  endpoint:
+    graphql: /graphql
+  enabled: true
+  basePath: /
+  pageTitle: GraphiQL
+  props:
+    resources:
+      query: /graphql/schema.graphqls
+    variables:
+      editorTheme: "solarized light"
